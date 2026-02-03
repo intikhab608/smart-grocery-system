@@ -3,17 +3,20 @@ server:
 
 spring:
   datasource:
-    url: jdbc:h2:mem:userdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: ""
-
-  h2:
-    console:
-      enabled: true
+    url: jdbc:postgresql://ep-wispy-cell-ahpvuys3-pooler.c-3.us-east-1.aws.neon.tech/neondb?user=neondb_owner&password=npg_Kloz3cSWx6Qn&sslmode=require&channelBinding=require
+    username: neondb_owner
+    password: your_password_here
+    driver-class-name: org.postgresql.Driver
 
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
     show-sql: true
 
+
+jpa:
+  database-platform: org.hibernate.dialect.MySQLDialect
+  hibernate:
+    ddl-auto: update
+  show-sql: true
