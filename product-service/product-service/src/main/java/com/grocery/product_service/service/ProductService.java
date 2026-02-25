@@ -32,7 +32,7 @@ public class ProductService {
 
         Product existingProduct = productRepo.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
         existingProduct.setDescription(updatedProduct.getDescription());
-        existingProduct.setName(updatedProduct.getName());
+        existingProduct.setProductName(updatedProduct.getProductName());
         existingProduct.setPrice(updatedProduct.getPrice());
 
         return productRepo.save(existingProduct);

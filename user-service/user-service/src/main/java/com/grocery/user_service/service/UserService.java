@@ -30,7 +30,7 @@ public class UserService {
     public User updateUser(long id, User updatedUser){
 
         User existingUser = userRepo.findById(id).orElseThrow(() -> new RuntimeException("User not found with id: " + id));
-        existingUser.setName(updatedUser.getName());
+        existingUser.setUsername(updatedUser.getUsername());
         existingUser.setEmail(updatedUser.getEmail());
         return userRepo.save(existingUser);
 

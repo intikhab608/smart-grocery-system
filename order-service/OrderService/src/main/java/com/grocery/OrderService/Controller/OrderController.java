@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.grocery.OrderService.Service.OrderService;
+import com.grocery.OrderService.dto.OrderFullResponse;
 import com.grocery.OrderService.Entity.Order;
 
 @RestController
@@ -23,6 +24,11 @@ public class OrderController {
 
     public OrderController(OrderService orderService){
          this.orderService = orderService;
+    }
+
+     @GetMapping("/fullorders/{id}")
+    public OrderFullResponse getFullOrder(@PathVariable Long id) {
+        return orderService.getCompleteOrder(id);
     }
 
     @GetMapping("/orders")

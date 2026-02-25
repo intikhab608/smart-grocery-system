@@ -15,7 +15,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "orders1")
+@Table(name = "orders")
 public class Order {
 
     @Id
@@ -25,5 +25,7 @@ public class Order {
     @Enumerated(EnumType.STRING)           
     private OrderStatus status;
     private long quantity;
+    private Long userId;     
+    private Long productId;
 
 }
